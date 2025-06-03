@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="formulario.css">
+    <title>Estudos</title>
+</head>
+
+<body>
+    <div class="caixas">
+        usar essas cores:
+        <div class="caixa1">amarelo mostarda</div>
+        <div class="caixa2">amarelo escuro</div>
+        <div class="caixa3">terracota</div>
+        <div class="caixa4">terracota escuro</div>
+        <div class="caixa5">aqua</div>
+        <div class="caixa6">aqua escuro</div>
+        <div class="caixa7">azul turquesa</div>
+        <div class="caixa8">azul turquesa escuro</div>
+    </div>
+
+    <!-- Parte superior do site (navegação)-->
+    <header>
+        <h1>planilha de estudos :)</h1>
+        <div class="opcoes-usuario">
+            <span class="saudacao">Olá, Matheus</span>
+            <a href="" class="btn-sair">
+                <i class="bx bxs-signal-slash"></i>
+            </a>
+        </div>
+
+    </header>
+
+<form action="#" method="post" class="formulario">
+        <!-- Matéria estudada-->
+        <label for="lista-materia"><u>matéria estudada.</u></label>
+        <div class="campo-materia">
+            <select name="lista-materia" id="lista-materia">
+            <option value="python">python</option>
+            <option value="matemática">matemática</option>
+        </select>
+        <button type="button" onclick="window.location.href='{{ url_for('criar_materia') }}'">não encontrou?</button>
+        </div>
+        
+
+        <!-- Resumo --> 
+        <label for="resumo"><u>resumo.</u></label>
+        <textarea name="resumo" id="resumo" rows="4" placeholder="escreva um resumo da sessão..."></textarea>
+
+        <!-- Duração-->
+        <label for="duracao"><u>duração.</u></label>
+        <div class="campo-duracao">
+            <input type="number" name="duracao" id="duracao" placeholder="ex: 40">
+            <span>min.</span>
+        </div>
+
+
+        <!-- Data -->
+        <label for="data"><u>data.</u></label>
+        <input type="date" name="data" id="data">
+
+        <!-- Onde -->
+        <label for="onde"><u>onde.</u></label>
+        <input type="text" id="onde" name="onde" placeholder="ex: biblioteca nacional">
+
+        <!-- Observações -->
+        <label for="observacoes"><u>observações.</u></label>
+        <textarea name="observacoes" rows="4" id="observacoes"
+            placeholder="espaço pra você escrever como se sentiu etc..."></textarea>
+
+        <!-- Enviar -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+* {
+    font-family: 'Manjari', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --amarelo_mostarda: #FFDB58;
+    --amarelo_escuro: #E1AD01;
+    --terracota: #E2725B;
+    --terracora_escuro: #CC4E3A;
+    --aqua: #00FFFF;
+    --aqua_escuro: #7FFFD4;
+    --azul_turquesa: #40E0D0;
+    --azul_escuro: #00CED1;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--azul_turquesa);
+    color: var(--azul_escuro);
+    border: none
+}
+
+.formulario label {
+    color: white;
+}
+
+.formulario button {
+    max-width: 120px;
+    padding: 5px;
+}
+
+.formulario button,
+.formulario input[type='submit'] {
+    background-color: var(--azul_escuro);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover,
+.formulario input[type='submit']:hover {
+    background-color: var(--terracota);
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--azul_escuro);
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--azul_escuro);
+    box-shadow: 0 0 4px var(--azul_escuro);
+}
+
+.campo-duracao {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 120px;
+}
+
+.campo-duracao input {
+    flex: 1;
+    padding: 5px;
+}
+
+.campo-duracao span {
+    color: white;
+}
+
+.campo-materia {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.campo-materia select {
+    flex: 1;
+}
+
+.campo-materia button {
+    white-space: nowrap;
+}

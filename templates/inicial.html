@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <title>Estudos</title>
+</head>
+
+<body>
+    <div class="caixas">
+        usar essas cores:
+        <div class="caixa1">amarelo mostarda</div>
+        <div class="caixa2">amarelo escuro</div>
+        <div class="caixa3">terracota</div>
+        <div class="caixa4">terracota escuro</div>
+        <div class="caixa5">aqua</div>
+        <div class="caixa6">aqua escuro</div>
+        <div class="caixa7">azul turquesa</div>
+        <div class="caixa8">azul turquesa escuro</div>
+    </div>
+
+    <!-- Parte superior do site (navegação)-->
+    <header>
+        <h1>planilha de estudos :)</h1>
+        <div class="opcoes-usuario">
+            <span class="saudacao">Olá, Matheus</span>
+            <a href="" class="btn-sair">
+                <i class="bx bxs-signal-slash"></i>
+            </a>
+        </div>
+
+    </header>
+
+    <div class="primeira-parte">
+        <section class="secao-acao">
+            <h2><u>ações!</u></h2>
+            <div class="btn-acao">
+                <a href="{{ url_for('criar_estudo') }}">registrar sessão de estudos</a>
+            </div>
+        </section>
+
+        <!-- Seção de detalhes (estatísticas, tabela, etc)-->
+        <section class="secao-detalhes">
+            <h2><u>detalhes!</u></h2>
+            <div class="btn-detalhe">
+                <button>ver sessões</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Seção de ações (nova seção de estudo, agendar etc)-->
+
+
+    <!-- Seção com mini histórico -->
+    <section class="secao-historico">
+        <h2><u>últimas sessões</u></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>data</th>
+                    <th>materia</th>
+                    <th>duração</th>
+                    <th>local</th>
+                    <th>observações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sessao in ultimas_sessoes %}
+                <tr>
+                    <td>{{  sessao['data'] }}</td>
+                    <td>{{  sessao['materia'] }}</td>
+                    <td>{{  sessao['duracao'] }}</td>
+                    <td>{{  sessao['local'] }}</td>
+                    <td>{{  sessao['observacoes'] }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">
+                        Nenhuma sessão encontrada
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

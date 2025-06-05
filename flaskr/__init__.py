@@ -19,6 +19,12 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    from . import db
+    db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
+
     @app.route('/teste')
     def teste():
         return '<p>Testando...</p>'
